@@ -1,12 +1,16 @@
-import React from 'react';
-import LandingPage from './components/LandingPage';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./components/LandingPage";
+import InspectionForm from "./components/InspectionForm";
+import "./App.css";
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <LandingPage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/inspection/:templateType" element={<InspectionForm />} />
+      </Routes>
+    </Router>
   );
 };
 

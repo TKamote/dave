@@ -1,0 +1,221 @@
+.inspection-form-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.top-buttons div {
+  display: flex;
+  gap: 1rem;
+}
+
+.inspection-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.image-upload-section {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.image-preview {
+  width: 100%;
+  height: 250px;
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.image-preview:hover {
+  border-color: #94a3b8;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  display: none;
+}
+
+.image-container:hover .image-overlay {
+  display: block;
+}
+
+.remove-image {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  cursor: pointer;
+}
+
+.placeholder-content {
+  text-align: center;
+  color: #64748b;
+}
+
+.placeholder-content i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.placeholder-content .subtitle {
+  display: block;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.image-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.upload-btn,
+.camera-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.upload-btn {
+  background: #6366f1;
+  color: white;
+}
+
+.camera-btn {
+  background: #4f46e5;
+  color: white;
+}
+
+.upload-btn:hover,
+.camera-btn:hover {
+  opacity: 0.9;
+}
+
+.upload-btn i,
+.camera-btn i {
+  font-size: 1.125rem;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-weight: bold;
+}
+
+.input-group input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.export-btn {
+  background-color: #28a745;
+}
+
+.reset-btn {
+  background-color: #6c757d;
+}
+
+.back-btn {
+  background-color: #6c757d;
+}

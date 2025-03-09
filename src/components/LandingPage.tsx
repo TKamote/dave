@@ -1,5 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
+import { useNavigate } from "react-router-dom";
 
 interface Template {
   title: string;
@@ -9,46 +10,45 @@ interface Template {
 }
 
 const LandingPage: React.FC = () => {
+  const navigate = useNavigate();
+
   const landingPageTemplates: Template[] = [
     {
-      title: "Lead Capture",
-      description: "Grow your leads with free offers and incentives",
+      title: "General Inspection",
+      description: "Carry out inspection easily with this tool",
       category: "LANDING PAGE TEMPLATES",
-      image: "https://placehold.co/600x400/e2e8f0/1e293b?text=Lead+Capture",
+      image: "../src/assets/images/Inspection.jpeg",
     },
     {
-      title: "Offers & Promotions",
-      description: "Promote your latest offers and discounts",
+      title: "3 x 2 Landscape",
+      description: "An A4 landscape mode 3 x 2 document will be genarated",
       category: "LANDING PAGE TEMPLATES",
-      image:
-        "https://placehold.co/600x400/e2e8f0/1e293b?text=Offers+%26+Promotions",
+      image: "../src/assets/images/3x2grid.jpeg",
     },
     {
-      title: "Social Bio Link",
-      description: "Turn your social followers into leads and customers",
+      title: "2 x 2 Portrait",
+      description: "An A4 portrait mode 3 x 2 document will be genarated",
       category: "LANDING PAGE TEMPLATES",
-      image: "https://placehold.co/600x400/e2e8f0/1e293b?text=Social+Bio+Link",
+      image: "../src/assets/images/2x2grid.jpeg",
     },
     {
-      title: "Sales",
-      description: "Monetize with sales pages, upsell funnels and checkouts",
+      title: "Basic FSM",
+      description: "Basic FSM Inspection Report will be genarated",
       category: "LANDING PAGE TEMPLATES",
-      image: "https://placehold.co/600x400/e2e8f0/1e293b?text=Sales",
+      image: "../src/assets/images/2x2grid.jpeg",
     },
     {
-      title: "Consultation",
+      title: "FSM Plus",
+      description: "A FSM Report with related observation will be genarated",
+      category: "LANDING PAGE TEMPLATES",
+      image: "../src/assets/images/2x2grid.jpeg",
+    },
+    {
+      title: "SCDF Form",
       description:
-        "Offer free consultations and promote your brand and services",
+        "An inspection in preparation for FC renewal certificaation will be genarated",
       category: "LANDING PAGE TEMPLATES",
-      image: "https://placehold.co/600x400/e2e8f0/1e293b?text=Consultation",
-    },
-    {
-      title: "Webinar & Virtual Event",
-      description:
-        "Make it easy for leads to sign up for your webinars and virtual events",
-      category: "LANDING PAGE TEMPLATES",
-      image:
-        "https://placehold.co/600x400/e2e8f0/1e293b?text=Webinar+%26+Virtual+Event",
+      image: "../src/assets/images/2x2grid.jpeg",
     },
   ];
 
@@ -75,6 +75,10 @@ const LandingPage: React.FC = () => {
     },
   ];
 
+  const handleTemplateClick = (templateType: string) => {
+    navigate(`/inspection/${templateType}`);
+  };
+
   return (
     <div className="landing-page">
       <nav className="navbar">
@@ -91,7 +95,6 @@ const LandingPage: React.FC = () => {
             <button className="nav-button">Solutions</button>
             <button className="nav-button active">Templates</button>
             <button className="nav-button">Resources</button>
-            <button className="nav-button">Pricing</button>
           </div>
         </div>
         <div className="nav-right">
@@ -103,22 +106,28 @@ const LandingPage: React.FC = () => {
       <main className="main-content">
         <section className="template-section">
           <div className="section-header">
-            <h2>LANDING PAGE TEMPLATES</h2>
+            <h2>INSPECTION TEMPLATES</h2>
             <a href="#" className="view-all">
-              All Landing Page Templates →
+              All Ispection Templates →
             </a>
           </div>
-          <div className="template-grid">
+          <div className="templates-grid">
             {landingPageTemplates.map((template, index) => (
-              <div key={index} className="template-card">
-                {template.image && (
-                  <div className="template-image">
-                    <img src={template.image} alt={template.title} />
-                  </div>
-                )}
-                <div className="template-content">
+              <div
+                key={index}
+                className="template-card"
+                onClick={() =>
+                  handleTemplateClick(
+                    template.title.toLowerCase().replace(/\s+/g, "-")
+                  )
+                }
+                style={{ cursor: "pointer" }}
+              >
+                <img src={template.image} alt={template.title} />
+                <div className="template-info">
                   <h3>{template.title}</h3>
                   <p>{template.description}</p>
+                  <span className="category">{template.category}</span>
                 </div>
               </div>
             ))}
@@ -127,9 +136,9 @@ const LandingPage: React.FC = () => {
 
         <section className="template-section">
           <div className="section-header">
-            <h2>WEBSITE TEMPLATES</h2>
+            <h2>CBA TEMPLATES</h2>
             <a href="#" className="view-all">
-              All Site Templates →
+              All CBA Templates →
             </a>
           </div>
           <div className="template-grid">
