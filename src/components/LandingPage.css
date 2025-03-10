@@ -99,6 +99,12 @@
   gap: 2rem;
 }
 
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
 .template-card {
   border: 1px solid #e2e8f0;
   border-radius: 8px;
@@ -106,9 +112,28 @@
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.template-card:hover {
+/* Only apply hover effect to clickable cards */
+.template-card.clickable:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Special styling for General Inspection card */
+.template-card.clickable {
+  border: 2px solid #6366f1;
+  position: relative;
+}
+
+.template-card.clickable::after {
+  content: "Click to Start →";
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: #6366f1;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
 }
 
 .template-card img {
@@ -158,4 +183,10 @@
     flex-direction: column;
     gap: 1rem;
   }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }

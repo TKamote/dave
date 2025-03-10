@@ -16,39 +16,39 @@ const LandingPage: React.FC = () => {
     {
       title: "General Inspection",
       description: "Carry out inspection easily with this tool",
-      category: "LANDING PAGE TEMPLATES",
-      image: "../src/assets/images/Inspection.jpeg",
+      category: "INSPECTIONS TEMPLATES",
+      image: "/assets/images/Inspection.jpeg",
     },
     {
       title: "3 x 2 Landscape",
-      description: "An A4 landscape mode 3 x 2 document will be genarated",
-      category: "LANDING PAGE TEMPLATES",
-      image: "../src/assets/images/3x2grid.jpeg",
+      description: "An A4 landscape mode 3 x 2 document will be generated",
+      category: "INSPECTIONS TEMPLATES",
+      image: "/assets/images/3x2grid.jpeg",
     },
     {
       title: "2 x 2 Portrait",
-      description: "An A4 portrait mode 3 x 2 document will be genarated",
-      category: "LANDING PAGE TEMPLATES",
-      image: "../src/assets/images/2x2grid.jpeg",
+      description: "An A4 portrait mode 3 x 2 document will be generated",
+      category: "INSPECTIONS TEMPLATES",
+      image: "/assets/images/2x2grid.jpeg",
     },
     {
       title: "Basic FSM",
-      description: "Basic FSM Inspection Report will be genarated",
-      category: "LANDING PAGE TEMPLATES",
-      image: "../src/assets/images/2x2grid.jpeg",
+      description: "Basic FSM Inspection Report will be generated",
+      category: "INSPECTIONS TEMPLATES",
+      image: "/assets/images/2x2grid.jpeg",
     },
     {
       title: "FSM Plus",
-      description: "A FSM Report with related observation will be genarated",
-      category: "LANDING PAGE TEMPLATES",
-      image: "../src/assets/images/2x2grid.jpeg",
+      description: "A FSM Report with related observation will be generated",
+      category: "INSPECTIONS TEMPLATES",
+      image: "/assets/images/2x2grid.jpeg",
     },
     {
       title: "SCDF Form",
       description:
-        "An inspection in preparation for FC renewal certificaation will be genarated",
-      category: "LANDING PAGE TEMPLATES",
-      image: "../src/assets/images/2x2grid.jpeg",
+        "An inspection in preparation for FC renewal certification will be generated",
+      category: "INSPECTIONS TEMPLATES",
+      image: "/assets/images/2x2grid.jpeg",
     },
   ];
 
@@ -57,20 +57,20 @@ const LandingPage: React.FC = () => {
       title: "Conferences & Events",
       description:
         "The perfect way to get registrants and share details for your next event",
-      category: "WEBSITE TEMPLATES",
+      category: "CBA TEMPLATES",
       image:
         "https://placehold.co/600x400/e2e8f0/1e293b?text=Conferences+%26+Events",
     },
     {
       title: "Mini Sites",
       description: "Create websites for products, services, and promotions",
-      category: "WEBSITE TEMPLATES",
+      category: "CBA TEMPLATES",
       image: "https://placehold.co/600x400/e2e8f0/1e293b?text=Mini+Sites",
     },
     {
       title: "Podcast & App",
       description: "Promote your podcast, app, or sub-brand with a website",
-      category: "WEBSITE TEMPLATES",
+      category: "CBA TEMPLATES",
       image: "https://placehold.co/600x400/e2e8f0/1e293b?text=Podcast+%26+App",
     },
   ];
@@ -108,20 +108,18 @@ const LandingPage: React.FC = () => {
           <div className="section-header">
             <h2>INSPECTION TEMPLATES</h2>
             <a href="#" className="view-all">
-              All Ispection Templates →
+              All Inspection Templates →
             </a>
           </div>
           <div className="templates-grid">
             {landingPageTemplates.map((template, index) => (
               <div
                 key={index}
-                className="template-card"
+                className={`template-card ${index === 0 ? "clickable" : ""}`}
                 onClick={() =>
-                  handleTemplateClick(
-                    template.title.toLowerCase().replace(/\s+/g, "-")
-                  )
+                  index === 0 ? handleTemplateClick("general-inspection") : null
                 }
-                style={{ cursor: "pointer" }}
+                style={{ cursor: index === 0 ? "pointer" : "default" }}
               >
                 <img src={template.image} alt={template.title} />
                 <div className="template-info">

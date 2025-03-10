@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
-import InspectionForm from "./components/InspectionForm";
+import InspectionForm from "./components/GenInspection/InspectionForm";
 import "./App.css";
 
 const App: React.FC = () => {
